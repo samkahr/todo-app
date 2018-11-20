@@ -3,8 +3,14 @@ import React, { Component } from 'react';
 class ToDo extends Component {
   render() {
     return (
-      <li>a todo will go here</li>
+      <li>
+        <input type="checkbox" defaultChecked={ this.props.isCompleted } onChange={ this.props.toggleComplete }
+        />
+        <span>{ this.props.description }</span>
+        <input type="button" value= "delete" onClick={ this.props.deleteTodo } />
+      </li>
     );
+
   }
 }
 
